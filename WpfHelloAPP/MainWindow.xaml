@@ -11,8 +11,8 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Column="1" HorizontalAlignment="Center" Margin="0,207,0,0" TextWrapping="Wrap" Text="HelloWPF" VerticalAlignment="Top" Width="58" TextChanged="TextBox_TextChanged" Height="18"/>
-        <Button Grid.Column="1" Content="Get London Weather" HorizontalAlignment="Left" Margin="400,142,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+
+        <Button Grid.Column="1" Content="Get London Weather" HorizontalAlignment="Left" Margin="30,28,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
 </Window>
