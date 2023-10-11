@@ -16,6 +16,7 @@ using System.Net.Http;
 using WpfHelloAPP;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using Newtonsoft.Json;
 
 
 
@@ -29,12 +30,13 @@ namespace WpfHelloAPP
         {
             InitializeComponent();
 
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
+           
 
         }
+
+       
+
+       
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -45,19 +47,23 @@ namespace WpfHelloAPP
             var apiKey = MyConfig.GetSection("AppSettings")["ApiKey"];
            
 
-            Console.WriteLine(apiKey);
+           
        
 
 
             string city = "London"; // Or get from user input
             //string apiKey = "*********"; 
 
-            string weatherData = await _weatherService.GetWeatherDataAsync(city, apiKey);
-            Console.WriteLine(weatherData);
-            
+            string jsonString = await _weatherService.GetWeatherDataAsync(city, apiKey);
+            Console.WriteLine(jsonString);
 
-            // Display the weatherData in your application (e.g., in a text box or label)
-            // ...
+            
+            // Assuming jsonString contains your JSON data
+            var weatherData = JsonConvert.DeserializeObject<WeatherData>(jsonString);
+
+            // Set the DataContext to the weatherData object
+            this.DataContext = weatherData;
+
         }
 
 
