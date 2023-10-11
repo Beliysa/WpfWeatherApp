@@ -12,9 +12,25 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="1" Content="Get London Weather" HorizontalAlignment="Left" Margin="30,28,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="320,30,0,0" TextWrapping="Wrap" Text="Weather for :" VerticalAlignment="Top" Width="80" TextChanged="TextBox_TextChanged"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="400,30,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Width="120"/>
+        <Button Grid.Column="1" Content="London" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Click="Button_Click_London"/>
+        <Button Grid.Column="1" Content="Ankara" HorizontalAlignment="Left" Margin="30,90,0,0" VerticalAlignment="Top" Click="Button_Click_Ankara"/>
+        <Button Grid.Column="1" Content="İstanbul" HorizontalAlignment="Left" Margin="30,60,0,0" VerticalAlignment="Top" Click="Button_Click_İstanbul"/>
+
+
+
+        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="330,30,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Width="auto"/>
+        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="325,60,0,0" TextWrapping="Wrap" Text="{Binding Weather[0].Main}" VerticalAlignment="Top" Width="auto"/>
+        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="410,60,0,0" TextWrapping="Wrap" Text="{Binding Weather[0].Description}" VerticalAlignment="Top" Width="auto"/>
+        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="330,90,0,0" TextWrapping="Wrap" Text="{Binding Main.Temp}" VerticalAlignment="Top" Width="auto"/>
+        
+        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="320,120,0,0" TextWrapping="Wrap" Text="{Binding Main.Humidity}" VerticalAlignment="Top" Width="auto"/>
+
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="250,30,0,0" TextWrapping="Wrap" Text="Weather for :" VerticalAlignment="Top"/>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="250,60,0,0" TextWrapping="Wrap" Text="Description :" VerticalAlignment="Top"/>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="400,60,0,0" TextWrapping="Wrap" Text="/" VerticalAlignment="Top"/>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="250,90,0,0" TextWrapping="Wrap" Text="Temperature :" VerticalAlignment="Top"/>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="365,90,0,0" TextWrapping="Wrap" Text="°C" VerticalAlignment="Top"/>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="250,120,0,0" TextWrapping="Wrap" Text="Humidity : %" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

@@ -37,7 +37,7 @@ namespace WpfHelloAPP
        
 
        
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click_London(object sender, RoutedEventArgs e)
         {
 
             var MyConfig = new ConfigurationBuilder()
@@ -55,7 +55,7 @@ namespace WpfHelloAPP
             //string apiKey = "*********"; 
 
             string jsonString = await _weatherService.GetWeatherDataAsync(city, apiKey);
-            Console.WriteLine(jsonString);
+            
 
             
             // Assuming jsonString contains your JSON data
@@ -65,6 +65,67 @@ namespace WpfHelloAPP
             this.DataContext = weatherData;
 
         }
+
+        private async void Button_Click_Ankara(object sender, RoutedEventArgs e)
+        {
+
+            var MyConfig = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            var apiKey = MyConfig.GetSection("AppSettings")["ApiKey"];
+
+
+
+
+
+
+            string city = "Ankara"; // Or get from user input
+            //string apiKey = "*********"; 
+
+            string jsonString = await _weatherService.GetWeatherDataAsync(city, apiKey);
+
+
+
+            // Assuming jsonString contains your JSON data
+            WeatherData weatherData = JsonConvert.DeserializeObject<WeatherData>(jsonString);
+
+            // Set the DataContext to the weatherData object
+            this.DataContext = weatherData;
+
+        }
+
+        private async void Button_Click_İstanbul(object sender, RoutedEventArgs e)
+        {
+
+            var MyConfig = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            var apiKey = MyConfig.GetSection("AppSettings")["ApiKey"];
+
+
+
+
+
+
+            string city = "İstanbul"; // Or get from user input
+            //string apiKey = "*********"; 
+
+            string jsonString = await _weatherService.GetWeatherDataAsync(city, apiKey);
+
+
+
+            // Assuming jsonString contains your JSON data
+            WeatherData weatherData = JsonConvert.DeserializeObject<WeatherData>(jsonString);
+
+            // Set the DataContext to the weatherData object
+            this.DataContext = weatherData;
+
+        }
+
+
+
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
