@@ -59,13 +59,16 @@ namespace WpfHelloAPP
 
             
             // Assuming jsonString contains your JSON data
-            var weatherData = JsonConvert.DeserializeObject<WeatherData>(jsonString);
+            WeatherData weatherData = JsonConvert.DeserializeObject<WeatherData>(jsonString);
 
             // Set the DataContext to the weatherData object
             this.DataContext = weatherData;
 
         }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
+        }
     }
 }
